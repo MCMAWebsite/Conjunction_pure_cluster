@@ -9,7 +9,7 @@ knitr::opts_chunk$set(warning=F)
 knitr::opts_chunk$set(message=F)
 print("In Conjuntion_pure_cluster/pure_cumnum.Rmd")
 
-user_website <- file.path(path.expand('~'), "Website", "Website_files")
+user_website <- file.path(path.expand('~'), "Website", "WebsiteFiles")
 print(paste("user_website", user_website))
 
 if(!require(tidyverse)) {install.packages("tidyverse", repos="https://cran.us.r-project.org")}
