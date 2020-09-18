@@ -7,8 +7,16 @@ title: Conjunction Analysis
 knitr::opts_chunk$set(echo=F)
 knitr::opts_chunk$set(warning=F)
 knitr::opts_chunk$set(message=F)
+print("In Conjuntion_pure_cluster/pure_cumnum.Rmd")
 
-setwd("C:/Users/rarora/Documents/Website/")
+user_docs <- path.expand('~')
+user_website <- paste0(user_docs, "/Website/Website_files")
+print(paste("user_website", user_website))
+
+install.packages("tidyverse", repo="http://cran.us.r-project.org")
+install.packages("kableExtra", repo="http://cran.us.r-project.org")
+install.packages("DT", repo="http://cran.us.r-project.org")
+
 library(tidyverse)
 library(readr)
 library(kableExtra)
@@ -18,15 +26,18 @@ library(DT)
 library(RColorBrewer)
 library(stringr)
 library(scales)
+
 Sys.setenv(TZ='EST')
-mcma_objs = readRDS("C:/Users/rarora/Documents/Website/Website_files/RDSfiles/mcma_objs")
-all_conjs_pure = readRDS("C:/Users/rarora/Documents/Website/Website_files/pureRDSfiles/all_conjs_pure")
-derelicts = readRDS("C:/Users/rarora/Documents/Website/Website_files/RDSfiles/derelicts")
-derelictDat = readRDS("C:/Users/rarora/Documents/Website/Website_files/RDSfiles/derelictDatNew")
-alt_bins = readRDS("C:/Users/rarora/Documents/Website/Website_files/RDSfiles/alt_bins")
-file_list_pure = readRDS("C:/Users/rarora/Documents/Website/Website_files/RDSfiles/file_list_pure")
+
+mcma_objs = readRDS(paste0(user_website, "/RDSfiles/mcma_objs")
+all_conjs_pure = readRDS(paste0(user_website, "/pureRDSfiles/all_conjs_pure"))
+derelicts = readRDS(paste0(user_website, "/RDSfiles/derelicts")
+derelictDat = readRDS(paste0(user_website, "/RDSfiles/derelictDatNew"))
+alt_bins = readRDS(paste0(user_website, "/RDSfiles/alt_bins"))
+file_list_pure = readRDS(paste0(user_website, "/RDSfiles/file_list_pure"))
+
 today = toupper(strftime(Sys.Date(), format="%d%b%Y")) # current day
-path = "conj_data/"
+#path = "conj_data/"
 ```
 
 ```{r update_conj_files, warning=F}
